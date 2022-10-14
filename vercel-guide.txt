@@ -1,0 +1,24 @@
+cuando trabajamos con vercel debemos tener 3 pasos presentes...
+
+
+
+## 1 - tener presente que el archivo index.js, debe encontrarse dentro 
+de la raiz del proyecto
+
+__________________________________________________________________________________
+
+## 2 - definir el escript (start) dentro del package.json
+
+"scripts": {
+    "start": "node index.js",
+}
+
+__________________________________________________________________________________
+
+## 3 - configurar el archivo vercel.json
+
+{
+	"version": 2,
+	"builds": [{ "src": "index.js", "use": "@vercel/node" }],
+	"routes": [{ "src": "/(.*)", "dest": "index.js" }]
+}
